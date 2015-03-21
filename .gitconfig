@@ -1,0 +1,67 @@
+[user]
+        name = Shwetank Dave
+        email = shwetank.dave@cenx.com
+
+[core]
+        editor = "/usr/bin/vi"
+
+[alias]
+        lo  = log --oneline
+        lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --
+        lwg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+        st = status
+        p = push
+        sm = submodule
+        smstart = submodule update
+        sminit = submodule init
+        smup = submodule update
+        smpull = submodule foreach git pull origin master
+        mgnff = merge --no-ff --summary
+        cm = commit -a -v
+        co = checkout
+        ci = commit -v
+        br = branch
+        brnm = branch --no-merged
+        brm = branch --merged
+        cp = commit -p -v
+        last = log -1 HEAD
+        blame = blame -b
+        ds = diff --staged
+        fup = log --since '1 day ago' --oneline --author shwetank.dave@cenx.com
+        l = log
+        lh = log --graph
+        la = !git lh --date-order --all 2> /dev/null
+        lb = log --graph --simplify-by-decoration
+        lba = !git lb --all
+        h = !git --no-pager log --graph -n 15
+        a = !git --no-pager la -n 15
+        stash-unapply = !git stash show -p | git apply -R
+        stash-sv = !git stash save
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+
+[color "branch"]
+        current = yellow reverse
+        remote = green bold
+        local = blue bold
+
+[color "diff"]
+        meta = blue bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[commit]
+        verbose = true
+
+[push]
+        default = current
+
+[merge]
+        tool = opendiff
+
+        ;; git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
