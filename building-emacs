@@ -1,0 +1,21 @@
+----
+Make sure libxml2 and libx are installed and linked
+$ brew install libxml2 libxslt
+$ brew link --force libxml2 libxslt
+----
+
+----
+First get the official emacs source.
+Installing Emacs from the Official Sources
+Get the official Emacs (insert version) source package:
+http://www.gnu.org/software/emacs/#Obtaining
+
+Unpack it to create the emacs-(insert version) directory.  Then run these commands in Terminal:
+  tar xf emacs-(insert version).tar.xz
+  cd emacs-(insert version)
+  ./configure --with-ns
+  make
+  make install
+
+Your Emacs.app is now in emacs-(insert-version)/nextstep/Emacs.app.  Locate this in Finder, then drag it to your Applications folder. I personally called it Emacs2 to distinguish between the original pre-compiled version in case it didn’t ‘make’ properly.
+--------
